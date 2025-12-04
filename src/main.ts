@@ -8,7 +8,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
   `,
 })
 export class App {
-  name = 'Icomet';
+  name = 'test';
 }
 
 bootstrapApplication(App);
