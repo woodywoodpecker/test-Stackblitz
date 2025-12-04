@@ -1,0 +1,21 @@
+.l-flex-container {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  &_footer {
+    > div {
+      margin: 10px;
+      padding: 20px;
+    }
+  }
+}
+
+.l-container {
+  width: 80vw;
+  margin: auto;
+}
+
+
+

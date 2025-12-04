@@ -1,0 +1,13 @@
+.c-carousel {
+    height: calc(100vh - 275px);
+    overflow: hidden;
+    border-top: darkgrey solid 1px;
+  }
+  
+  .c-carousel img {
+    height: auto;
+    width: 100%;
+    position: absolute;
+    margin-top: -75px;
+  }
+  
