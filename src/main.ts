@@ -4,8 +4,8 @@ import { Home } from './app/features/home/home';
 
 @Component({
   selector: 'app-root',
-  template: `<h1>{{ name }}</h1>`,
   imports: [ Home ],
+  template: `<app-home />`,
 })
 
 export class App {
