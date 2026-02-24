@@ -1,0 +1,167 @@
+/* ============================= */
+/* NAVIGATION */
+/* ============================= */
+
+.nav {
+  position: relative;
+  width: 100%;
+  height: 75px;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+
+  /* ===== Logo ===== */
+
+  &__logo img {
+    height: 42px;
+    width: auto;
+  }
+
+  /* ============================= */
+  /* HAMBURGER BUTTON */
+  /* ============================= */
+
+  &__toggle {
+    position: relative;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  &__bar {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transition: 
+      transform 0.35s cubic-bezier(.4,0,.2,1),
+      opacity 0.2s ease,
+      top 0.35s cubic-bezier(.4,0,.2,1);
+  }
+
+  &__bar:nth-child(1) { top: 0; }
+  &__bar:nth-child(2) { top: 9px; }
+  &__bar:nth-child(3) { top: 18px; }
+
+  /* ===== Hamburger → X animation ===== */
+
+  &--active &__bar:nth-child(1) {
+    top: 9px;
+    transform: rotate(45deg);
+  }
+
+  &--active &__bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  &--active &__bar:nth-child(3) {
+    top: 9px;
+    transform: rotate(-45deg);
+  }
+
+  /* ============================= */
+  /* MOBILE MENU */
+  /* ============================= */
+
+  &__menu {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+      transform 0.4s cubic-bezier(.4,0,.2,1),
+      opacity 0.3s ease;
+  }
+
+  &--active &__menu {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 20px 0;
+  }
+
+  &__item {
+    text-align: center;
+  }
+
+  &__link {
+    display: block;
+    padding: 16px 0;
+
+    text-transform: uppercase;
+    font-family: "Alata", sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+
+    color: #444;
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+  }
+
+  &__link:hover {
+    color: #e10600;
+  }
+
+  &__link--active {
+    color: #e10600;
+  }
+}
+
+/* ============================= */
+/* DESKTOP */
+/* ============================= */
+
+@media (min-width: 992px) {
+
+  .nav {
+    height: 110px;
+    padding: 0 8vw;
+
+    &__toggle {
+      display: none;
+    }
+
+    &__menu {
+      position: static;
+      transform: none;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      padding: 0;
+    }
+
+    &__item {
+      text-align: left;
+    }
+
+    &__link {
+      padding: 0;
+    }
+  }
+
+}

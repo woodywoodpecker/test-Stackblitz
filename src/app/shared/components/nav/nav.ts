@@ -1,11 +1,18 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-nav',
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './nav.html',
-  styleUrl: './nav.css'
+  styleUrl: './nav.scss'
 })
 export class Nav {
+  isMenuActive = false;
 
+  toggle(): void {
+    this.isMenuActive = !this.isMenuActive;
+}
 }

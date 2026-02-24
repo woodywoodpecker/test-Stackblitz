@@ -1,1 +1,28 @@
-<p>nav works!</p>
+<nav class="nav" [class.nav--active]="isMenuActive">
+
+  <!-- Logo -->
+  <div class="nav__logo">
+    <a routerLink="/app-home"><img src="" alt="Logo"></a>
+  </div>
+
+  <!-- Toggle -->
+  <button class="nav__toggle" (click)="toggle()" aria-label="Menu toggle">
+    <span class="nav__bar"></span>
+    <span class="nav__bar"></span>
+    <span class="nav__bar"></span>
+  </button>
+
+  <!-- Menu -->
+  <div class="nav__menu">
+    <ul class="nav__list" (click)="toggle()">
+      <li class="nav__item"><a class="nav__link" routerLink="/app-home" routerLinkActive="nav__link--active">Home</a></li>
+      <li class="nav__item"><a class="nav__link" routerLink="/app-home" fragment="products" routerLinkActive="nav__link--active">Products</a></li>
+      <!--<li class="nav__item"><a class="nav__link" routerLink="/doors" routerLinkActive="nav__link--active">Doors</a></li>
+      <li class="nav__item"><a class="nav__link" routerLink="/realisaties" routerLinkActive="nav__link--active">Realisaties</a></li>
+      <li class="nav__item"><a class="nav__link" routerLink="/over-ons" routerLinkActive="nav__link--active">Over ons</a></li>
+      <li class="nav__item nav__item--button"><a class="nav__link" routerLink="/contact" routerLinkActive="nav__link--active">Contact</a></li>
+      -->
+    </ul>
+  </div>
+
+</nav>
