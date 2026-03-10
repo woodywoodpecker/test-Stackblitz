@@ -1,1 +1,10 @@
-<p>carousel works!</p>
+<!-- carousel --> 
+<div class="c-carousel"> 
+    <ng-container *ngFor="let slide of slides; let i = index"> 
+        <img *ngIf="i === currentSlide" [src]="slide" class="c-slide" @carouselAnimation /> 
+    </ng-container> 
+
+    <!-- controls --> 
+    <button class="c-control c-control--prev" (click)="nextImage()"> <span class="c-arrow c-arrow--left"></span> </button> 
+    <button class="c-control c-control--next" (click)="previousImage()"> <span class="c-arrow c-arrow--right"></span> </button> 
+</div>

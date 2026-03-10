@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Nav } from '../../shared/components/nav/nav';
-import { Carousel } from '../../shared/components/carousel/carousel';
+import { CarouselComponent } from '../../shared/components/carousel/carousel';
 import { Footer } from '../../layout/footer/footer';
 import { Products } from '../products/products';
 
@@ -8,7 +8,7 @@ import { Products } from '../products/products';
   selector: 'app-home',
   imports: [
     Nav,
-    Carousel,
+    CarouselComponent,
     Products,
     Footer
   ],
@@ -16,5 +16,8 @@ import { Products } from '../products/products';
   styleUrl: './home.scss'
 })
 export class Home {
-
+  slides: string[] = [
+    'assets/img/1.jpg',
+    'assets/img/2.jpg'
+  ];
 }
